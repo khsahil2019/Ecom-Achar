@@ -1,0 +1,1192 @@
+/**
+ * Achar Heritage - Luxury Red & White Theme
+ * Premium Authentic Indian Pickle E-Commerce Design System
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
+
+:root {
+    /* Balanced Gourmet Heritage Palette - Refined, Premium, High Legibility */
+    --brand-primary: #B91C1C;          /* Gourmet Spiced Red (Accents, CTAs, Highlights) */
+    --brand-primary-dark: #991B1B;     /* Deep Crimson Hover */
+    --brand-primary-light: #DC2626;    /* Vibrant Pepper Red */
+    --brand-primary-subtle: #FEF2F2;   /* Soft Warm Rose Tint */
+    --brand-accent: #B91C1C;           /* Primary Accent */
+    --brand-accent-hover: #991B1B;
+    --brand-gold: #F59E0B;             /* Warm Turmeric Gold */
+    --brand-gold-light: #FEF3C7;
+    --brand-bg: #FBF9F6;               /* Warm Gourmet Linen / Off-White */
+    --brand-surface: #FFFFFF;          /* Pure Crisp White */
+    --brand-border: #E5E7EB;           /* Clean Modern Border */
+    --brand-text: #1F2937;             /* Readable Obsidian Slate */
+    --brand-muted: #6B7280;
+    
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-pill: 50px;
+    
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 14px 35px rgba(0, 0, 0, 0.10);
+    --shadow-card: 0 2px 14px rgba(0, 0, 0, 0.04);
+    --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Reset & Base */
+body {
+    font-family: var(--font-body);
+    background-color: var(--brand-bg);
+    color: var(--brand-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    color: var(--brand-text);
+    font-weight: 700;
+}
+
+a {
+    color: var(--brand-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--brand-primary-dark);
+}
+
+/* Announcement Bar - Sophisticated Amazon Dark Strip with Warm Gold Highlight */
+.announcement-bar {
+    background: #0B0E14;
+    color: #E5E7EB;
+    font-size: 0.84rem;
+    font-weight: 500;
+    padding: 7px 0;
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.announcement-bar a {
+    color: #FBBF24;
+    text-decoration: underline;
+}
+
+/* Header & Navbar - Crisp White */
+.site-header {
+    background: var(--brand-surface);
+    border-bottom: 1px solid var(--brand-border);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    transition: var(--transition);
+}
+
+.site-header.scrolled {
+    box-shadow: 0 6px 24px rgba(197, 22, 29, 0.08);
+}
+
+.brand-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-badge {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-light));
+    color: #FFF;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 14px rgba(197, 22, 29, 0.35);
+}
+
+.brand-title {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.brand-subtitle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--brand-primary-dark);
+    margin: 0;
+}
+
+/* Navigation Links */
+.nav-link-custom {
+    color: #27272A;
+    font-weight: 500;
+    padding: 8px 16px !important;
+    border-radius: var(--radius-pill);
+    transition: var(--transition);
+}
+
+.nav-link-custom:hover, .nav-link-custom.active {
+    color: var(--brand-primary) !important;
+    background-color: var(--brand-primary-subtle);
+    font-weight: 600;
+}
+
+/* Live Search Box */
+.live-search-wrapper {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+
+.live-search-input {
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--brand-border);
+    padding: 10px 20px 10px 44px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    background-color: #FAFAFA;
+}
+
+.live-search-input:focus {
+    border-color: var(--brand-primary);
+    background-color: #FFF;
+    box-shadow: 0 0 0 3px rgba(197, 22, 29, 0.15);
+}
+
+.live-search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--brand-primary);
+}
+
+.search-results-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #FFF;
+    border-radius: var(--radius-md);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+    border: 1px solid var(--brand-border);
+    z-index: 1050;
+    max-height: 380px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid #FDF2F2;
+    transition: var(--transition);
+}
+
+.search-result-item:hover {
+    background-color: var(--brand-primary-subtle);
+}
+
+.search-result-img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--brand-border);
+}
+
+/* Header Action Buttons */
+.header-action-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid var(--brand-border);
+    background: #FFF;
+    color: #27272A;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.15rem;
+    transition: var(--transition);
+}
+
+.header-action-btn:hover {
+    border-color: var(--brand-primary);
+    background-color: var(--brand-primary);
+    color: #FFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(197, 22, 29, 0.25);
+}
+
+.action-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--brand-primary);
+    color: #FFF;
+    font-size: 0.65rem;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFF;
+    box-shadow: 0 2px 6px rgba(197, 22, 29, 0.4);
+}
+
+/* Buttons - Red & White Theme */
+.btn-brand-primary {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-light));
+    color: #FFF;
+    font-weight: 600;
+    border: none;
+    padding: 11px 26px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 4px 16px rgba(197, 22, 29, 0.35);
+    transition: var(--transition);
+}
+
+.btn-brand-primary:hover {
+    background: linear-gradient(135deg, var(--brand-primary-dark), var(--brand-primary));
+    color: #FFF;
+    box-shadow: 0 8px 24px rgba(197, 22, 29, 0.45);
+    transform: translateY(-2px);
+}
+
+.btn-brand-accent {
+    background: linear-gradient(135deg, #FFF, #FFF5F5);
+    color: var(--brand-primary);
+    font-weight: 700;
+    border: 2px solid var(--brand-primary);
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 4px 14px rgba(197, 22, 29, 0.15);
+    transition: var(--transition);
+}
+
+.btn-brand-accent:hover {
+    background: var(--brand-primary);
+    color: #FFF;
+    box-shadow: 0 6px 20px rgba(197, 22, 29, 0.35);
+    transform: translateY(-2px);
+}
+
+.btn-outline-brand {
+    border: 1.5px solid var(--brand-primary);
+    color: var(--brand-primary);
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+    padding: 9px 24px;
+    background: #FFF;
+    transition: var(--transition);
+}
+
+.btn-outline-brand:hover {
+    background: var(--brand-primary);
+    color: #FFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(197, 22, 29, 0.25);
+}
+
+/* Product Card - Clean White with Red Glow */
+.product-card {
+    background: var(--brand-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--brand-border);
+    overflow: hidden;
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: var(--shadow-card);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: #F87171;
+}
+
+.product-thumb-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: #FDFBFB;
+    padding-top: 88%;
+}
+
+.product-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-thumb {
+    transform: scale(1.06);
+}
+
+.product-badges {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 2;
+}
+
+.badge-festive {
+    background: var(--brand-primary);
+    color: #FFF;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(197, 22, 29, 0.3);
+}
+
+.badge-bestseller {
+    background: var(--brand-gold);
+    color: #1F1B1B;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.product-wishlist-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    border-radius: 50%;
+    border: 1px solid var(--brand-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #71717A;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.product-wishlist-btn:hover, .product-wishlist-btn.active {
+    color: var(--brand-primary);
+    background: #FFF;
+    border-color: var(--brand-primary);
+    transform: scale(1.1);
+}
+
+.product-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-category-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--brand-primary);
+    letter-spacing: 0.8px;
+    margin-bottom: 5px;
+}
+
+.product-title {
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    color: var(--brand-text);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.7em;
+}
+
+.product-title a:hover {
+    color: var(--brand-primary);
+}
+
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.82rem;
+    color: var(--brand-gold);
+    margin-bottom: 12px;
+}
+
+.rating-count {
+    color: var(--brand-muted);
+    font-size: 0.75rem;
+}
+
+.product-pricing {
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.price-current {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+}
+
+.price-mrp {
+    font-size: 0.9rem;
+    color: var(--brand-muted);
+    text-decoration: line-through;
+}
+
+.price-discount {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    background: var(--brand-primary-subtle);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid var(--brand-border);
+}
+
+/* Category Cards */
+.category-card {
+    background: #FFF;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--brand-border);
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+    display: block;
+    box-shadow: var(--shadow-card);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--brand-primary);
+}
+
+.category-img {
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.category-title {
+    padding: 14px 10px 4px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--brand-text);
+    margin: 0;
+    transition: var(--transition);
+}
+
+.category-card:hover .category-title {
+    color: var(--brand-primary);
+}
+
+/* Hero Section - Luxurious Warm Gourmet Linen & Spiced Amber (Inviting & Comfortable) */
+.hero-section {
+    background: linear-gradient(135deg, #FFFDF9 0%, #FDF7F0 45%, #F6ECE0 100%);
+    color: #1F2937;
+    padding: 75px 0 70px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #EBE3D7;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle at 75% 35%, rgba(245, 158, 11, 0.10) 0%, transparent 65%);
+    pointer-events: none;
+}
+
+.hero-headline {
+    font-size: clamp(2.3rem, 5.2vw, 3.8rem);
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.15;
+    margin-bottom: 22px;
+    letter-spacing: -0.5px;
+}
+
+.hero-subheading {
+    font-size: 1.16rem;
+    color: #4B5563;
+    max-width: 540px;
+    margin-bottom: 30px;
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+/* Feature Icon Boxes */
+.feature-box {
+    background: #FFF;
+    padding: 26px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--brand-border);
+    text-align: center;
+    transition: var(--transition);
+    height: 100%;
+    box-shadow: var(--shadow-card);
+}
+
+.feature-box:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--brand-primary);
+}
+
+.feature-icon-circle {
+    width: 60px;
+    height: 60px;
+    background: var(--brand-primary-subtle);
+    color: var(--brand-primary);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+    border: 1px solid var(--brand-border);
+}
+
+/* Order Stepper (Timeline) */
+.order-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 30px 0;
+}
+
+.order-timeline::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    right: 5%;
+    height: 4px;
+    background: #FEE2E2;
+    z-index: 1;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    flex: 1;
+}
+
+.timeline-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #FFF;
+    border: 3px solid #FCA5A5;
+    color: #9CA3AF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    transition: var(--transition);
+}
+
+.timeline-step.completed .timeline-icon {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #FFF;
+}
+
+.timeline-step.active .timeline-icon {
+    background: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #FFF;
+    box-shadow: 0 0 0 5px rgba(197, 22, 29, 0.2);
+}
+
+.timeline-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--brand-muted);
+}
+
+.timeline-step.completed .timeline-label,
+.timeline-step.active .timeline-label {
+    color: var(--brand-primary);
+    font-weight: 700;
+}
+
+/* Floating WhatsApp Widget */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1040;
+    transition: var(--transition);
+}
+
+.floating-whatsapp:hover {
+    color: #FFF;
+    transform: scale(1.1) translateY(-4px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* Footer - Elegant Deep Wine & Crisp White */
+.site-footer {
+    background: #140507;
+    color: #D1D5DB;
+    padding-top: 65px;
+    padding-bottom: 35px;
+    font-size: 0.95rem;
+    border-top: 3px solid var(--brand-primary);
+}
+
+.footer-heading {
+    color: #FFF;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 38px;
+    height: 2.5px;
+    background: var(--brand-primary-light);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #A1A1AA;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: #FFF;
+    padding-left: 6px;
+}
+
+/* Toast Alerts Container */
+.toast-container-custom {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9999;
+}
+
+/* Product Detail Variant Chips */
+.variant-btn {
+    border: 2px solid var(--brand-border);
+    background: #FFF;
+    padding: 8px 18px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    color: #27272A;
+}
+
+.variant-btn:hover {
+    border-color: var(--brand-primary);
+}
+
+.variant-btn.active {
+    border-color: var(--brand-primary);
+    background: var(--brand-primary-subtle);
+    color: var(--brand-primary);
+}
+
+/* Admin Dashboard Specific Enhancements */
+.admin-sidebar {
+    background: #180507;
+    min-height: 100vh;
+    color: #F4F4F5;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-sidebar .nav-link {
+    color: #A1A1AA;
+    padding: 12px 20px;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    margin: 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition);
+}
+
+.admin-sidebar .nav-link:hover, .admin-sidebar .nav-link.active {
+    color: #FFF;
+    background: rgba(197, 22, 29, 0.2);
+}
+
+.admin-sidebar .nav-link.active {
+    background: var(--brand-primary);
+    box-shadow: 0 4px 12px rgba(197, 22, 29, 0.4);
+}
+
+.admin-kpi-card {
+    background: #FFF;
+    border-radius: var(--radius-md);
+    padding: 22px;
+    border: 1px solid var(--brand-border);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.admin-kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+    border-color: #F87171;
+}
+
+/* Active Pill Highlight */
+.bg-brand-primary {
+    background-color: var(--brand-primary) !important;
+    color: #FFF !important;
+}
+
+.text-brand-primary {
+    color: var(--brand-primary) !important;
+}
+
+.border-brand-primary {
+    border-color: var(--brand-primary) !important;
+}
+
+/* ==========================================================================
+   AMAZON-STYLE RED & WHITE HEADER & FOOTER DESIGN SYSTEM
+   ========================================================================== */
+
+/* Main Header Container - Authentic Amazon Deep Slate Charcoal */
+.amz-header {
+    background: #131921; /* Authentic Amazon Deep Slate Navy/Charcoal */
+    color: #FFF;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    border-bottom: 1px solid #1a222d;
+}
+
+/* Amazon Nav Interactive Hover Box */
+.amz-nav-box {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 5px 8px;
+    color: #FFF;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    cursor: pointer;
+    line-height: 1.15;
+}
+
+.amz-nav-box:hover {
+    border-color: #FFF;
+    color: #FFF;
+}
+
+.amz-nav-line-1 {
+    font-size: 0.72rem;
+    color: #CCCCCC;
+    display: block;
+    white-space: nowrap;
+}
+
+.amz-nav-line-2 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #FFF;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Amazon Deliver to Box */
+.amz-deliver-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.amz-deliver-icon {
+    font-size: 1.35rem;
+    color: #FBBF24;
+}
+
+/* Mega Search Bar (Amazon Style) */
+.amz-search-form {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    border-radius: 6px;
+    overflow: visible;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    background: #FFF;
+}
+
+.amz-search-form:focus-within {
+    box-shadow: 0 0 0 3px #F59E0B;
+}
+
+.amz-search-cat-select {
+    background-color: #F3F4F6;
+    color: #374151;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: none;
+    border-right: 1px solid #D1D5DB;
+    padding: 0 10px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    max-width: 130px;
+    cursor: pointer;
+    outline: none;
+}
+
+.amz-search-cat-select:focus {
+    background-color: #E5E7EB;
+}
+
+.amz-search-input-field {
+    border: none;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    flex-grow: 1;
+    outline: none;
+    color: #111827;
+    background: #FFF;
+}
+
+.amz-search-btn {
+    background: #F59E0B;
+    border: none;
+    color: #1F1B1B;
+    padding: 0 20px;
+    font-size: 1.25rem;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.amz-search-btn:hover {
+    background: #D97706;
+    color: #FFF;
+}
+
+/* Cart Button */
+.amz-cart-wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.amz-cart-icon-wrap {
+    position: relative;
+    display: inline-block;
+    font-size: 1.85rem;
+    line-height: 1;
+}
+
+.amz-cart-badge {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-40%);
+    color: #F59E0B;
+    font-weight: 800;
+    font-size: 0.88rem;
+    line-height: 1;
+}
+
+/* Sub-Navigation Bar - Authentic Amazon Slate */
+.amz-subnav {
+    background: #232F3E; /* Authentic Amazon Slate Subnav */
+    color: #FFF;
+    padding: 4px 0;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.amz-subnav-link {
+    color: #FFF;
+    padding: 6px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    transition: border-color 0.15s ease;
+}
+
+.amz-subnav-link:hover {
+    border-color: #FFF;
+    color: #FFF;
+}
+
+.amz-subnav-all-btn {
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Amazon Offcanvas Drawer */
+.amz-offcanvas-header {
+    background: #232F3E;
+    color: #FFF;
+    padding: 16px 20px;
+}
+
+.amz-offcanvas-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.amz-menu-section-header {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #374151;
+    padding: 14px 20px 4px;
+}
+
+.amz-menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #1F2937;
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: background 0.15s ease;
+}
+
+.amz-menu-item:hover {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+/* Amazon Flyout Dropdown for Account & Lists */
+.amz-account-dropdown {
+    width: 440px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 1px solid #E5E7EB;
+}
+
+/* ==========================================================================
+   AMAZON-STYLE FOOTER DESIGN - AUTHENTIC SLATE & CHARCOAL
+   ========================================================================== */
+
+.amz-footer {
+    background: #131921;
+    color: #D1D5DB;
+    font-size: 0.88rem;
+}
+
+.amz-back-to-top {
+    background: #37475A;
+    color: #FFF;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s ease;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+.amz-back-to-top:hover {
+    background: #485769;
+    color: #FFF;
+}
+
+.amz-footer-main {
+    background: #232F3E;
+    padding: 50px 0 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.amz-footer-col h5 {
+    color: #FFF;
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.2px;
+}
+
+.amz-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.amz-footer-links li {
+    margin-bottom: 9px;
+}
+
+.amz-footer-links a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.amz-footer-links a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.amz-footer-mid {
+    background: #131921;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.amz-footer-pill {
+    border: 1px solid #4B5563;
+    padding: 6px 14px;
+    border-radius: 4px;
+    color: #D1D5DB;
+    font-size: 0.8rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: border-color 0.2s ease;
+}
+
+.amz-footer-pill:hover {
+    border-color: #FFF;
+    color: #FFF;
+}
+
+.amz-footer-services-grid {
+    padding: 35px 0 25px;
+    background: #0F1111;
+}
+
+.amz-service-link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.amz-service-title {
+    color: #F3F4F6;
+    font-weight: 700;
+    font-size: 0.78rem;
+    display: block;
+    line-height: 1.25;
+}
+
+.amz-service-desc {
+    color: #9CA3AF;
+    font-size: 0.72rem;
+    display: block;
+    line-height: 1.35;
+}
+
+.amz-service-link:hover .amz-service-title {
+    text-decoration: underline;
+    color: #FBBF24;
+}
+
+.amz-footer-bottom {
+    background: #0F1111;
+    padding: 15px 0 35px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9CA3AF;
+}
+
+.amz-footer-bottom a {
+    color: #D1D5DB;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.amz-footer-bottom a:hover {
+    text-decoration: underline;
+}
+

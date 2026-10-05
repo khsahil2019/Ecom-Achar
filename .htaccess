@@ -1,0 +1,39 @@
+# ==============================================================
+# Achar Heritage Apache Configuration & Security (.htaccess)
+# ==============================================================
+
+Options -Indexes
+ServerSignature Off
+
+# 1. Protect Sensitive Database & Config Files
+<FilesMatch "\.(sql|sqlite|sqlite3|env|ini|log|sh)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# 2. Security Headers
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 3. URL Rewrite Engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Ensure uploads directory does not execute PHP scripts
+    RewriteRule ^uploads/.*\.php$ - [F,L]
+</IfModule>
+
+# 4. Gzip / Deflate Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>

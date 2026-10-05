@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /shop.php
+Allow: /product.php
+Allow: /about.php
+Allow: /contact.php
+Allow: /policies.php
+
+Disallow: /admin/
+Disallow: /account/
+Disallow: /checkout/
+Disallow: /auth/
+Disallow: /ajax/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /database/
+
+Sitemap: http://localhost:8000/sitemap.xml

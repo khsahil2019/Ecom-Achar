@@ -175,11 +175,12 @@ require_once __DIR__ . '/../includes/sidebar.php';
                     </thead>
                     <tbody>
                         <?php foreach ($orders as $ord): 
-                            $badgeColor = match($ord['order_status']) {
-                                'Delivered' => 'bg-success',
-                                'Shipped', 'Out for Delivery' => 'bg-info text-dark',
-                                'Cancelled' => 'bg-danger',
-                                default => 'bg-warning text-dark'
+                            $pillClass = match($ord['order_status']) {
+                                'Delivered' => 'pill-success',
+                                'Shipped', 'Out for Delivery' => 'pill-info',
+                                'Packed' => 'pill-primary',
+                                'Cancelled' => 'pill-danger',
+                                default => 'pill-warning'
                             };
                         ?>
                             <tr>
@@ -202,14 +203,17 @@ require_once __DIR__ . '/../includes/sidebar.php';
                                     <?= e($ord['shipping_city']) ?>, <?= e($ord['shipping_state']) ?>
                                 </td>
                                 <td>
-                                    <div class="fw-bold text-success"><?= format_price($ord['total_amount']) ?></div>
+                                    <div class="fw-bold text-dark"><?= format_price($ord['total_amount']) ?></div>
                                 </td>
                                 <td>
                                     <span class="badge bg-light text-dark border small"><?= strtoupper(e($ord['payment_method'])) ?></span>
                                     <div class="text-muted" style="font-size:0.7rem;"><?= strtoupper(e($ord['payment_status'])) ?></div>
                                 </td>
                                 <td>
-                                    <span class="badge <?= $badgeColor ?>"><?= e($ord['order_status']) ?></span>
+                                    <span class="admin-status-pill <?= $pillClass ?>">
+                                        <span class="admin-status-dot"></span>
+                                        <?= e($ord['order_status']) ?>
+                                    </span>
                                 </td>
                                 <td class="small text-muted"><?= format_date($ord['created_at'], 'd M Y') ?></td>
                                 <td class="text-end">

@@ -38,32 +38,11 @@ try {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Custom Style -->
+    <!-- Custom Style & Admin Design System -->
     <link href="<?= BASE_URL ?>/assets/css/style.css?v=<?= filemtime(__DIR__ . '/../../assets/css/style.css') ?>" rel="stylesheet">
-    <style>
-        .admin-wrapper {
-            display: flex;
-            min-height: 100vh;
-        }
-        .admin-main-content {
-            flex-grow: 1;
-            background-color: #F8F9FA;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        .admin-topbar {
-            background: #FFF;
-            border-bottom: 1px solid var(--brand-border);
-            padding: 14px 24px;
-        }
-        .admin-content-body {
-            padding: 24px;
-            flex-grow: 1;
-        }
-    </style>
+    <link href="<?= BASE_URL ?>/assets/css/admin.css?v=<?= filemtime(__DIR__ . '/../../assets/css/admin.css') ?>" rel="stylesheet">
 </head>
-<body>
+<body class="admin-body">
 
 <div class="admin-wrapper">
     <!-- Sidebar Included Next -->
